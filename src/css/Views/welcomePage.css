@@ -1,0 +1,166 @@
+.container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #A2D3BE;
+    
+  }
+  .welcome-wrapper{
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    flex-flow: row;
+    flex-direction: row;
+    margin:20px 5px 10px 5px; /*trbl*/
+    overflow-x: hidden;
+}
+
+.notice-text-otp{
+    width: 60%;
+    margin: auto;
+    line-height: 20px;
+    text-align: center;
+    padding:10px;
+    font-size: 14px;
+    
+}
+
+.slider-header{
+    text-align: left;
+    font-size: 15px;
+    padding-left: 4px;
+
+}
+.form-header{
+    text-align: left;
+    font-size: 15px;
+    padding-left: 20px;  
+}
+
+.forgot-password-text{
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight:400;
+    margin-top: 6px;
+    margin-left: 34px;
+
+}
+
+
+.notice-text{
+    font-size: 14px;
+    z-index: 1000;
+    margin-top: 15px;
+}
+.notice-btn-text{
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.AuthContainer{
+    margin-left: 50px;
+}
+.slider-text-header{
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+.welcome-footer{
+    color:#fff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top:10px;
+    opacity: 0.7;
+    transition: 0.5s all;
+}
+.footerImg{
+   margin:10px 5px -10px 5px;
+   height:30px;
+  animation: revolve 400ms linear 3;
+}
+
+.slider-text{
+    margin-top: -5px;
+    line-height:17px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: small;
+    font-size: 13px;
+    color: #808080;
+}
+.slider-container{
+    width: 30%;
+    height: 100%;
+}
+
+.access-form-container{
+    width: 40%;
+    height:100%;
+}
+/* .label{
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #669DDC;
+} */
+
+.resend-otp{
+    font-family: "Ubuntu", sans-serif;
+    font-size:14px;
+    color: #669DDC;
+    letter-spacing: 2px; 
+    cursor: pointer;
+    opacity: 0.7;
+}
+.sliderContainer{
+    border-radius: 4px;
+}
+.sliderDiv{
+    /* padding: 20px; */
+    /* padding-right: 30px; */
+    min-width: 280px;
+    text-align:center;
+    border-right: 1px solid #669DDC;
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/*##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 300px) and (max-width: 480px) {
+    /* .container{
+        justify-content: initial;
+    } */
+    .sliderDiv{
+        border-bottom: 1px solid #669DDC;
+        border-right: none;
+    }
+    .AuthContainer{
+        margin-left: 0;
+    }
+    .forgot-password-text{
+      
+        margin-top: 10px;
+        margin-left: 10px; 
+    }
+ 
+}
+
+
+@keyframes revolve { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }}

@@ -1,0 +1,18 @@
+@import "./Views/welcomePage.css";
+@import "./Views/CompleteSignup.css";
+@import './components/MessageCard.css';
+
+
+
+.carousel{
+    outline: 0;
+}
+.carousel .slider-slide .caroItem{
+    outline: none !important;
+}
+.dot{
+    width: 5px;
+    height: 2px;
+    background: black;
+    
+}
