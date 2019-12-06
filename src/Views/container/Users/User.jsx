@@ -1,36 +1,41 @@
 import React, { Component } from 'react'
 // import classNames from 'classnames';
-import { withStyles,Grow, Grid,Paper,MenuItem, Button,IconButton, InputAdornment,InputLabel, FormControl, Typography,FormHelperText,TextField } from '@material-ui/core';
+import { withStyles,Grow, Grid,Card,MenuItem, Button,IconButton, InputAdornment,InputLabel, FormControl, Typography,FormHelperText,TextField } from '@material-ui/core';
 import {Visibility, VisibilityOff  }from '@material-ui/icons';
 import axios from 'axios'
-
-
+import MessageCard from '../../../components/MessageCard'
 
  const style = theme =>({
   wrapper:{
-    width: '60%'
+    width: '0%',
   },
     root : {
         alignItems: 'center',
         justifyContent : 'center',
         display : 'flex',
+        marginTop : '5%'
     },
     formWrapper:{
         alignItems: 'center',
         justifyContent : 'center',
         display : 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        width: '140%'
     },
     textFields:{
-      width: '50%'
+      width: '130%'
     },
     submit:{
-      width: '50%',
+      width: '130%',
       backgroundColor:  "#00854D",
       color: 'white'
     },
     card:{
-      width: '60%'
+        alignItems: 'center',
+        justifyContent : 'center',
+        display : 'flex',
+        padding: '5%',
+        width: '30%',
     }
  })
 
@@ -45,6 +50,7 @@ class User extends Component {
             phone: '',
             password: '',
             showPassword: false,
+
         }
     }
     handleClickShowPassword = () => {
@@ -58,16 +64,28 @@ class User extends Component {
             'lastname': this.state.lname,
             'password': this.state.password,
             'usertypeid': 1,
-            
-            
         }
+          setTimeout(()=>{
           axios.post('https://bhfarmers.herokuapp.com/users',data)
           .then(data => {
               console.log(data,'created user')
+              this.setState({
+                fname: '',
+                lname: '',
+                role: '',
+                phone: '',
+                password: '',
+                showPassword: false,
+              })
+              window.location.replace('/')
           }).catch(err => {
               console.log(err)
+              setTimeout(()=>{
+                  return <MessageCard type="error"  
+                  Message={err}/>
+              },3000)
           })
-         
+        }, 100)
       }
     handleChange =(event)=>{
         this.setState({
@@ -78,10 +96,9 @@ class User extends Component {
         const {classes} = this.props
         // const { textField, resize, phoneInputprops } = classes;
         return (
-          <Paper className={classes.wrapper}>
-          <div className={classes.card}>
-          <form noValidate autoComplete="off">
-              <div className={classes.formWrapper}>
+          <div className={classes.root}>
+          <Card className={classes.card}>
+          <form className={classes.formWrapper} noValidate autoComplete="on">
           <TextField
                 name="fname"
                 label="First Name"
@@ -131,10 +148,10 @@ class User extends Component {
                Create
              
             </Button>
-          </div>
                 </form>
+                </Card>
                 </div>
-                </Paper>
+                
         )
     }
 }

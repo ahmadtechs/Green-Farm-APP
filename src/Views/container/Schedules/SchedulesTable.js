@@ -108,10 +108,10 @@ render(){
             return{
           sn: i = i + 1,
           supervisor: row.supervisorname,
-          activity: row.supervisorid,
-          // basin : "",
-          // crop: "",
-          // stage : ""
+          activity: row.activityname,
+          basin : row.basinname,
+          crop: row.cropname,
+          stage : row.stagename
         } }) : []
     console.log(data, "this is what is rendered")  
     

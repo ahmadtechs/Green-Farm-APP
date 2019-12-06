@@ -57,47 +57,14 @@ class DasboardContainer extends Component {
       const stackedData = {
         labels: ['Activity', 'Task', 'Basin', 'Crop', 'Stage'],
         datasets: [{
-        type: 'bar',
-                label: 'Activities',
-                backgroundColor: '#66BB6A',
-        data: [50,25,12,48, 39]
+                label: ['Activity ', 'Task ', 'Basin ', 'Crop ', 'Stage'],
+                backgroundColor: ['#66BB6A','#FFCA28','#32AF89','#4FAF32','#66BB6A'],
+                data: [60,55,37,48, 73]
         }, 
-        {
-        type: 'bar',
-        label: 'Tasks',
-        backgroundColor: '#FFCA28',
-        data: [90,76,42,21,84]
-        }, 
-        {
-        type: 'bar', 
-        label: 'Basins',
-        backgroundColor: '#A4D10F',
-        data: [24,74,23,21,32]
-        },
-        {
-          type: 'bar', 
-          label: 'Crops',
-          backgroundColor: '#32AF89',
-          data: [41,52,24,74,23]
-        },
-        {
-          type: 'bar', 
-          label: 'Stages',
-          backgroundColor: '#4FAF32',
-          data: [52,24,74,23,21]
-          }
         ]};
 
-        const stackedOptions = {
-          tooltips: { mode: 'index',intersect: false },
-          responsive: true,
-          scales: { xAxes: [{stacked: true,}],
-                  yAxes: [{stacked: true}]
-          }
-        };
-
         const {datum} = this.state
-        console.log(datum.tasks, "supervisors names")
+        console.log(datum.activities, "supervisors names")
 
         const {classes} = this.props;
 
@@ -106,7 +73,7 @@ class DasboardContainer extends Component {
           <div className={classes.charts}>
               <div className="content-section implementation">
                 <h3>Schedule Chart</h3>
-                <Chart type="bar" data={stackedData} options={stackedOptions} />
+                <Chart type="bar" data={stackedData} />
               </div>
           </div>
       </div>
